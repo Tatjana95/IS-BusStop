@@ -31,3 +31,32 @@ Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v ci
 	
 \end{description}
 
+\subsection{Kupovina karte}
+\subsubsection{Kupovina ako karta nije unapred rezervisana}
+\begin{description}
+	\item[$\ast$ Kratak opis: ] Kupac na \v salteru kupuje kartu za \v zeljenu destinaciju. Slu\v zbenik na \v salteru unosi podatke u sistem i \v stampa kartu ukoliko ima slobodnog mesta u autobusu.
+	\item[$\ast$ U\v cesnici: ] Kupac i slu\v zbenik na \v salteru.
+	\item[$\ast$ Preduslovi: ] Kupac dolazi na stanicu.
+	\item[$\ast$ Tok: ]
+	\begin{enumerate}
+		\item Kupac dolazi na \v salter.
+		\item Zatra\v zi informacije o vremenima polazaka, prevoznicima i cenama karte ukoliko to vec nije u\v cinio.
+		\item Slu\v zbenik na \v salteru mu daje \v zeljene informacije
+		\item Kupac se izja\v snjava za vreme polaska i \v zeljenog prevoznika (ukoliko vi\v se prevoznika polazi u isto vreme).
+		\item Slu\v zbenik unosi date podatke u sistem.
+		\item Sistem proverava da li ima slobodnog mesta u tom terminu.
+		\item Ukoliko nema slobodnog mesta, a vozilo jo\v s uvek nije postavljeno na peron, sistem proverava da li dati prevoznik ima resurse da zameni teku\'ce vozilo vozilom ve\'ceg kapaciteta ili da uvede dodatno vozilo.
+		\item Ukoliko nema mesta i prevoznik nema odgovaraju\'ce dodatne resurse, sistem daje obave\v stenje da nema mesta, a zatim slu\v zbenik to saop\v stava kupcu i kupovina se smatra neuspe\v snom.
+		\item Ukoliko ima slobodnog mesta ili prevoznik na raspolaganju ima potrebne resurse, sistem daje obave\v stenje da je kupovinu mogu\'ce izvr\v siti.
+		\item Slu\v zbenik saop\v stava kupcu da ima mesta u autobusu.
+		\item Kupac potvrdjuje da \v zeli da kupi kartu i nagla\v sava da li \v zeli kartu u jednom smeru ili povratnu.
+		\item Ukoliko kupac ima pravo na neki od popusta, saop\v stava to slu\v zbeniku i pokazuje odgovaraju\'ca dokumenta kao dokaz.
+		\item Slu\v zbenik unosi podatke o popustu i podatke da li je karta povratna ili u jednom smeru.
+		\item Sistem \v stampa kartu.
+		\item Kupac pla\' ca kartu.
+		\item Slu\v zbenik uzima novac i daje kartu kupcu tako da se kupovina smatra uspe\v snom.
+	\end{enumerate}
+\end{description}
+
+
+
