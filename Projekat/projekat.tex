@@ -6,6 +6,25 @@ Tema ovog projekta je razvijanje globalnog informacionog sistema za Medj{}ugrads
 Ovaj informacioni sistem nam pru\v za mogu\'cnost da izaberemo po\v cetnu i krajnju stanicu, kao i datum polaska. Sistem nam daje uvid u sve polaske za datu destinaciju na odabrani datum kao i cene karata. 
 Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v cin omogu\'ci kupovinu/prodaju, rezervaciju (kako karata tako i mesta) i eventualne reklamacije. Kupovina je mogu\'ca iskljucivo na \v salteru, dok se rezervacija i reklamacija mogu obaviti putem telefona ili online. Ukoliko se kupac koji je rezervisao kartu ili mesto ne pojavi do odredjenog vremena, rezervacija se ponistava. Prilikom kupovine kupac ostvaruje pravo na neke od popusta omogu\'cene od strane prevoznika. Da bi se to \v sto efikasnije izvelo sistem mora da brine i o raspolo\v zivim resursima na polaznoj stanici. Svakog trenutka sistem mora da ima uvid o broju raspolo\v zivih mesta na izabranoj pocetnoj stanici (koliko je putnika u\v slo i iza\v slo na predhodnim stanicama). U slu\v caju velikog interesovanja (do nekog odredjenog perioda, 5 min pre dolaska autobusa na peron) sistem obave\v stava da \'ce biti potreban dodatni broj mesta. Ukoliko je prevoznik u mogu\'cnosti (na raspolaganju u blizini ima dodatna vozila i voza\v ce) pove\'cava se broj mesta (trenutni autobus se zamenjuje autobusom sa ve\'cim brojem mesta ili uvodjenjem dodatnog vozila). Takodje, ako je zanteresovanost jako mala, moze se planirani autobus zameniti vozilom manjeg kapaciteta. Sistem vodi racuna i o broju slobodnih perona, da bi u slu\v caju uvodjenja novog vozila ono imalo gde da se smesti (po\v zeljno je da u svakom trenutku imamo slobodan peron). Na jednom peronu razmak izmedju dva polaska treba da bude najmanje 15 minuta.
 
+\section{Akteri}
+\subsection{Kupac}
+\begin{itemize}
+	\item Kupuje kartu
+	\item Rezervi\v se kartu
+	\item Rezervi\v se mesto
+	\item Reklamira kartu
+\end{itemize}
+\subsection{\v Salterski slu\v zbenik}
+\begin{itemize}
+	\item Prodaje kartu
+	\item Ukoliko je rezervacija ili reklamacija izvr\v sena putem telefona unosi podatke u sistem
+\end{itemize}
+\subsection{Predstavnik agencije}
+\begin{itemize}
+	\item Obezbedj{}uje potrebna vozila i voza\v ce
+\end{itemize}
+
+\newpage
 \section{Slu\v cajevi upotrebe}
 \subsection{Online rezervacija karte}
 \begin{description}
@@ -14,9 +33,9 @@ Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v ci
 	\item[$\ast$ U\v cesnici: ] Kupac.
 	\item[$\ast$ Preduslovi: ] Pristup internetu.
 	\item[$\ast$ Postuslovi: ] Rezervacija karte uspe\v sno poslata u sistem.
-	\item[$\ast$ Osnovni tok: ]
+	\item[$\ast$ Osnovni tok: ] \ \\
 	\renewcommand{\labelenumii}{\Roman{enumii}}
-	\begin{enumerate}			
+	\begin{enumerate}
 		\item Kupac pristupa online sajtu autobuske stanice.
 		\item Informi\v se se o dostupnim terminima i redovima vo\v znje za datum i vreme koji mu odgovaraju.
 		\item Popunjava formu za rezervaciju karte na kojoj se nalaze detalji poput datuma i vremena polaska.
@@ -30,14 +49,14 @@ Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v ci
 	\end{enumerate}
 	
 \end{description}
-
+\newpage
 \subsection{Kupovina karte}
 \subsubsection{Kupovina ako karta nije unapred rezervisana}
 \begin{description}
 	\item[$\ast$ Kratak opis: ] Kupac na \v salteru kupuje kartu za \v zeljenu destinaciju. Slu\v zbenik na \v salteru unosi podatke u sistem i \v stampa kartu ukoliko ima slobodnog mesta u autobusu.
 	\item[$\ast$ U\v cesnici: ] Kupac i slu\v zbenik na \v salteru.
 	\item[$\ast$ Preduslovi: ] Kupac dolazi na stanicu.
-	\item[$\ast$ Tok: ]
+	\item[$\ast$ Tok: ] \ \\
 	\begin{enumerate}
 		\item Kupac dolazi na \v salter.
 		\item Zatra\v zi informacije o vremenima polazaka, prevoznicima i cenama karte ukoliko to vec nije u\v cinio.
