@@ -9,3 +9,5 @@ https://www.overleaf.com/read/jxpnxxnmsdqd
 >09.11.2018 - Dodati uvod, analiza, i slucaj upotrebe
 
 >10.11.2018 - Dodati akteri
+
+>11.11.2018 - Dodat dijagram toka podataka
