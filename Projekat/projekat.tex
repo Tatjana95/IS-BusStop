@@ -6,16 +6,25 @@ Tema ovog projekta je razvijanje globalnog informacionog sistema za Medj{}ugrads
 Ovaj informacioni sistem nam pru\v za mogu\'cnost da izaberemo po\v cetnu i krajnju stanicu, kao i datum polaska. Sistem nam daje uvid u sve polaske za datu destinaciju na odabrani datum kao i cene karata. 
 Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v cin omogu\'ci kupovinu/prodaju, rezervaciju (kako karata tako i mesta) i eventualne reklamacije. Kupovina je mogu\'ca iskljucivo na \v salteru, dok se rezervacija i reklamacija mogu obaviti putem telefona ili online. Ukoliko se kupac koji je rezervisao kartu ili mesto ne pojavi do odredjenog vremena, rezervacija se ponistava. Prilikom kupovine kupac ostvaruje pravo na neke od popusta omogu\'cene od strane prevoznika. Da bi se to \v sto efikasnije izvelo sistem mora da brine i o raspolo\v zivim resursima na polaznoj stanici. Svakog trenutka sistem mora da ima uvid o broju raspolo\v zivih mesta na izabranoj pocetnoj stanici (koliko je putnika u\v slo i iza\v slo na predhodnim stanicama). U slu\v caju velikog interesovanja (do nekog odredjenog perioda, 5 min pre dolaska autobusa na peron) sistem obave\v stava da \'ce biti potreban dodatni broj mesta. Ukoliko je prevoznik u mogu\'cnosti (na raspolaganju u blizini ima dodatna vozila i voza\v ce) pove\'cava se broj mesta (trenutni autobus se zamenjuje autobusom sa ve\'cim brojem mesta ili uvodjenjem dodatnog vozila). Takodje, ako je zanteresovanost jako mala, moze se planirani autobus zameniti vozilom manjeg kapaciteta. Sistem vodi racuna i o broju slobodnih perona, da bi u slu\v caju uvodjenja novog vozila ono imalo gde da se smesti (po\v zeljno je da u svakom trenutku imamo slobodan peron). Na jednom peronu razmak izmedju dva polaska treba da bude najmanje 15 minuta.
 
-\section{Dijagram toka podataka}
+\section{Dijagram konteksta i DPT dijagram}
+\begin{figure}[!htb] 
+	\centering
+	\includegraphics[width=0.7\linewidth]{"../Slike/Dijagram konteksta"}
+	\caption{Dijagram konteksta}
+	\label{fig:dijagram-konteksta}
+\end{figure}
+
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\linewidth]{DTP}
-	\caption{Dijagram toka podataka}
+	\includegraphics[width=0.7\linewidth]{../Slike/DTP}
+	\caption{DTP dijagram nivoa 1}
 	\label{fig:dtp}
 \end{figure}
 
 
 
+
+\newpage
 \section{Akteri}
 \subsection{Kupac}
 \begin{itemize}
