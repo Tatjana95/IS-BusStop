@@ -83,16 +83,75 @@ Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v ci
 		\item Kupac se izja\v snjava za vreme polaska i \v zeljenog prevoznika (ukoliko vi\v se prevoznika polazi u isto vreme).
 		\item Slu\v zbenik unosi date podatke u sistem.
 		\item Sistem proverava da li ima slobodnog mesta u tom terminu.
-		\item Ukoliko nema slobodnog mesta, a vozilo jo\v s uvek nije postavljeno na peron, sistem proverava da li dati prevoznik ima resurse da zameni teku\'ce vozilo vozilom ve\'ceg kapaciteta ili da uvede dodatno vozilo.
-		\item Ukoliko nema mesta i prevoznik nema odgovaraju\'ce dodatne resurse, sistem daje obave\v stenje da nema mesta, a zatim slu\v zbenik to saop\v stava kupcu i kupovina se smatra neuspe\v snom.
-		\item Ukoliko ima slobodnog mesta ili prevoznik na raspolaganju ima potrebne resurse, sistem daje obave\v stenje da je kupovinu mogu\'ce izvr\v siti.
-		\item Slu\v zbenik saop\v stava kupcu da ima mesta u autobusu.
+		\item Ako nema mesta kupovina se smatra neuspe\v snom.
+		\item Ina\v ce, slu\v zbenik saop\v stava kupcu da ima slobodnog mesta.
 		\item Kupac potvrdjuje da \v zeli da kupi kartu i nagla\v sava da li \v zeli kartu u jednom smeru ili povratnu.
 		\item Ukoliko kupac ima pravo na neki od popusta, saop\v stava to slu\v zbeniku i pokazuje odgovaraju\'ca dokumenta kao dokaz.
 		\item Slu\v zbenik unosi podatke o popustu i podatke da li je karta povratna ili u jednom smeru.
 		\item Sistem \v stampa kartu.
 		\item Kupac pla\' ca kartu.
 		\item Slu\v zbenik uzima novac i daje kartu kupcu tako da se kupovina smatra uspe\v snom.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Kupovina mesta ako nije unapred rezervisano}
+\begin{description}
+	\item[$\ast$ Kratak opis: ] Kupac, koji ima povratnu kartu, na \v salteru kupuje mesto za odredjeni termin. Slu\v zbenik na \v salteru unosi podatke u sistem i na karti potvrdjuje mesto i vreme.
+	\item[$\ast$ U\v cesnici: ] Kupac i slu\v zbenik na \v salteru.
+	\item[$\ast$ Preduslovi: ] Kupac ima povratnu kartu.
+	\item[$\ast$ Postuslovi: ] Potvrdjena je kupovina mesta u sistemu.
+	\item[$\ast$ Tok: ] \ \\
+	\begin{enumerate}
+		\item Kupac dolazi na \v salter.
+		\item Zatra\v zi informacije o vremenima polazaka za odgovaraju\'ceg prevoznika za odredjeni datum (ako to vec nije ranije u\v cinjeno).
+		\item Slu\v zbenik na \v salteru mu daje \v zeljene informacije
+		\item Kupac se izja\v snjava za \v zeljeni termin.
+		\item Slu\v zbenik unosi odgovaraju\'ce podatke u sistem.
+		\item Sistem proverava da li ima slobodnog mesta u datom terminu.
+		\item Ako nema mesta kupovina se smatra neuspe\v snom.
+		\item Ina\v ce, slu\v zbenik saop\v stava kupcu da ima slobodnog mesta.
+		\item Kupac potvrdjuje da li \v zeli da putuje u tom terminu i prila\v ze kartu.
+		\item Slu\v zbenik unosi u sistem da kupac \v zeli da putuje.
+		\item Sistem mu daje podatak o broju sedi\v sta.
+		\item Slu\v zbenik na karti zapisuje broj sedi\v sta, datum i termin putovanja.
+		\item Kupac pla\'ca mesto.
+		\item Slu\v zbenik uzima novac i vra\'ca kupcu kartu.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Kupovina unapred rezervisane karte}
+\begin{description}
+	\item[$\ast$ Kratak opis: ] Kupac je unapred rezervisao kartu i dolazi na salter da je preuzme.
+	\item[$\ast$ U\v cesnici: ] Kupac i slu\v zbenik na \v salteru.
+	\item[$\ast$ Preduslovi: ] Kupac je rezervisao kartu za odredjeni termin i odredjenog prevoznika.
+	\item[$\ast$ Postuslovi: ] Kupac je dobio papirnu kartu.
+	\item[$\ast$ Tok: ] \ \\
+	\begin{enumerate}
+		\item Kupac dolazi na \v salter.
+		\item Saop\v stava slu\v zbeniku da je rezervisao kartu i saop\v stava/pokazuje identifikacioni kod koji je dobio prilikom rezervacije
+		\item Slu\v zbenik unosi identifikacioni kod u sistem i tako potvrdjuje kupovinu karte.
+		\item Sistem \v cekira da je rezervisana karta preuzeta.
+		\item Sistem \v stampa kartu.
+		\item Kupac pla\'ca kartu.
+		\item Slu\v zbenik uzima novac i daje kartu.
+	\end{enumerate}
+\end{description}
+
+\subsubsection{Kupovina unapred rezervisanog mesta}
+\begin{description}
+	\item[$\ast$ Kratak opis: ] Kupac je unapred rezervisao mesto i dolazi na salter da potvrdi.
+	\item[$\ast$ U\v cesnici: ] Kupac i slu\v zbenik na \v salteru.
+	\item[$\ast$ Preduslovi: ] Kupac ima povratnu kartu i rezervisao je mesto za odredjeni termin kod odgovarajuceg prevoznika.
+	\item[$\ast$ Postuslovi: ] Kupac je dobio mesto u autobusu.
+	\item[$\ast$ Tok: ] \ \\
+	\begin{enumerate}
+		\item Kupac dolazi na \v salter.
+		\item Saop\v stava slu\v zbeniku da ima rezervisano mesto, saop\v stava/pokazuje identifikacioni kod koji je dobio prilikom rezervacije i prila\v ze kartu
+		\item Slu\v zbenik unosi identifikacioni kod u sistem i tako potvrdjuje kupovinu mesta.
+		\item Sistem \v cekira da je rezervisano mesto preuzeto.
+		\item Slu\v zbenik na karti bele\v zi broj sedi\v sta, vreme i datum putovanja.
+		\item Kupac pla\'ca kartu.
+		\item Slu\v zbenik uzima novac i vra\'ca kartu kupcu.
 	\end{enumerate}
 \end{description}
 
@@ -118,3 +177,16 @@ Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v ci
   
 \end{description}
 
+\subsection{Alokacija dodatnih resursa}
+\begin{description}
+	\item[$\ast$ Kratak opis: ] U slu\v caju da su sva mesta popunjena, sistem obave\v stava predstavnika prevozni\v cke agencije da je potrebno jo\v s resursa. 
+	\item[$\ast$ U\v cesnici: ] Predstavnik agencije.
+	\item[$\ast$ Preduslovi: ] Nema vi\v se mesta u trenutno rasporedjenim autobusima.
+	\item[$\ast$ Postuslovi: ] Povratna informacija da li prevoznik ima odgovaraju\'ce raspolo\v zive resurse.
+	\item[$\ast$ Tok: ] \ \\
+	\begin{enumerate}
+		\item Sistem obave\v stava predstavnika prevozni\v cke agencije da su potrebni dodatni resursi.
+		\item Predstavnik agencije mu \v salje odgovor da li mo\v ze da zameni teku\'ce vozilo vozilom ve\'ceg kapaciteta ili da uvede dodatno.
+		\item Ukoliko postoje odgovaraju\'ci resursi, bele\v ze se podaci o njima u sistem.
+	\end{enumerate}
+\end{description}
