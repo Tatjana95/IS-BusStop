@@ -222,6 +222,55 @@ Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v ci
   
 \end{description}
 
+\subsection{Poni\v stavanje rezervacije karte/mesta - telefonom}
+\begin{description}
+  \item[$\ast$ Kratak opis: ] Kupac mo\v ze telefonskim putem poni\v stiti rezervaciju karte ili mesta. Ukoliko je rezervacija va\v ze\'ca, slu\v zbenik poni\v stava rezervaciju u sistemu.
+  \item[$\ast$ U\v cesnici: ] Kupac i slu\v zbenik
+  \item[$\ast$ Preduslovi: ] Kupac ima identifikacioni kod
+  \item[$\ast$ Postuslovi: ] Rezervacija je poni\v stena
+  \item[$\ast$ Osnovni tok: ] \ \\
+  \begin{enumerate}
+    \item Kupac zove telefonom i obavestava slu\v zbenika o nameri da poni\v sti
+	   rezervaciju karte ili mesta.
+    \item Slu\v zbenik trazi identifikacioni kod rezervacije
+    \item Kupac daje kod slu\v zbeniku
+    \item Sistem proverava da li kod postoji i da li je rezervacija va\v ze\'ca.
+    \item Ukoliko su kod i rezervacija va\v ze\'ci, slu\v zbenik poni\v stava 
+	   rezervaciju u sistemu
+    \item Slu\v zbenik obave\v stava kupca o uspe\v snom poni\v stenju
+  \end{enumerate}
+  \item[$\ast$ Alternativni tok]
+  \begin{enumerate}
+    \item[5a. ]  Ukoliko su kod ili rezervacija neva\v ze\'ci, slu\v zbenik obave\v stava kupca o 
+		neregularnosti
+  \end{enumerate}
+  
+\end{description}
+
+\subsection{Poni\v stavanje rezervacije karte/mesta - onlajn}
+\begin{description}
+  \item[$\ast$ Kratak opis: ] Kupac mo\v ze poni\v stiti rezervaciju karte ili mesta putem veb servisa. 
+			 	Sistem proverava ispravnost podataka i bri\v se rezervaciju.
+  \item[$\ast$ U\v cesnici: ] Kupac
+  \item[$\ast$ Preduslovi: ] Kupac ima identifikacioni kod i pristup internetu
+  \item[$\ast$ Postuslovi: ] Rezervacija je poni\v stena
+  \item[$\ast$ Osnovni tok: ] \ \\
+  \begin{enumerate}
+    \item Kupac pristupa veb servisu i odabira opciju poni\v stavanja rezervacije.
+    \item Servis zahteva identifikacioni kod rezervacije
+    \item Kupac unosi kod
+    \item Sistem proverava da li kod postoji i da li je rezervacija va\v ze\'ca.
+    \item Ukoliko su kod i rezervacija va\v ze\'ci, sistem poni\v stava rezervaciju
+    \item Sistem izbacuje poruku kojom obavestava kupca o uspe\v snom poni\v stenju.
+  \end{enumerate}
+  \item[$\ast$ Alternativni tok]
+  \begin{enumerate}
+    \item[5a. ]  Ukoliko su kod ili rezervacija neva\v ze\'ci, sistem izbacuje poruku greske kojom obavestava kupca o neregularnosti. 
+		neregularnosti
+  \end{enumerate}
+  
+\end{description}
+
 \subsection{Alokacija dodatnih resursa}
 \begin{description}
 	\item[$\ast$ Kratak opis: ] U slu\v caju da su sva mesta popunjena, sistem obave\v stava predstavnika prevozni\v cke agencije da je potrebno jo\v s resursa. 
