@@ -149,7 +149,7 @@ Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v ci
 	\centering
 	\includegraphics[width=1.2\linewidth]{"../Slike/kupovina"}
 	\caption{Dijagram aktivnosti - kupovina nerezervisane karte}
-	\label{fig:dijagram-aktivnosti}
+	\label{fig:kupovina}
 \end{figure}
 
 \subsubsection{Kupovina mesta ako nije unapred rezervisano}
@@ -297,3 +297,136 @@ Osnovna namena na\v seg informacionog sistema je da na \v sto efikasniji na\v ci
 		\item Ukoliko postoje odgovaraju\'ci resursi, bele\v ze se podaci o njima u sistem.
 	\end{enumerate}
 \end{description}
+
+\newpage
+
+\section{Baza podataka}
+\subsection{Model baze podataka}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=17cm, height = 12.5cm]{../Slike/baza.png}
+	\caption{Model baze podataka}
+	\label{fig:baza}
+\end{figure}	
+\subsection{Opis entiteta}
+
+\textbf{Autobuska\_stanica} \\
+Opisuje odredjenu autobusku stanicu.
+\begin{itemize}
+	\item id
+	\item naziv
+	\item grad
+\end{itemize}
+\textbf{Peron} \\
+Svaka stanica ima bar jedan peron.
+\begin{itemize}
+	\item broj\_perona
+	\item slobodan
+	\item Autobuska\_stanica\_id 
+\end{itemize}
+\textbf{Polazak} \\
+\begin{itemize}
+	\item id
+	\item datum\_polaska
+\end{itemize}
+\textbf{Prevoznik} \\
+\v Cuva podatke o prevozniku.
+\begin{itemize}
+	\item id
+	\item naziv
+\end{itemize}
+\textbf{Vozac} \\
+Sadr\v zi informacije o voza\v cima.
+\begin{itemize}
+	\item maticni\_broj
+	\item ime
+	\item prezime
+	\item Prevoznik\_id
+\end{itemize}
+\textbf{Vozilo} \\
+Informacije o vozilima koje obezbedjuje odredjeni prevoznik.
+\begin{itemize}
+	\item id
+	\item Prevoznik\_id
+	\item broj\_mesta
+	\item tip
+\end{itemize}
+\textbf{Vozi} \\
+Veza izmeju vozila i voza\v ca.
+\begin{itemize}
+	\item Vozac\_maticni\_broj
+	\item Vozilo\_Prevoznik\_id
+	\item Vozilo\_id
+\end{itemize}
+\textbf{Polazi\_sa\_stanice} \\
+Podaci o vremenu kada koji autobus kre\'ce sa kod perona i stanice.
+\begin{itemize}
+	\item datum
+	\item vreme\_dolaska\_na\_peron
+	\item vreme\_polaska\_sa\_perona
+	\item broj\_slobodnih\_mesta
+	\item Vozi\_Vozilo\_Prevoznik\_id
+	\item Vozi\_Vozilo\_id
+	\item Peron\_broj\_perona
+	\item Peron\_Autobuska\_stanica\_id
+	\item Polazak\_id
+\end{itemize}
+\textbf{Rezervacija}\\
+Informacije o rezervaciji karte ili mesta.
+\begin{itemize}
+	\item idRezervacija
+	\item Polazi\_sa\_stanice\_Vozi\_Vozilo\_Prevoznik
+	\item Polazi\_sa\_stanice\_Vozi\_Vozilo\_id
+	\item Polazi\_sa\_stanice\_Peron\_broj\_perona
+	\item Polazi\_sa\_stanice\_Peron\_Autobuska\_stanica
+	\item Polazi\_sa\_stanice\_Polazak\_id
+	\item odrediste - id odredi\v sne stanice
+	\item preuzeta
+\end{itemize}
+\textbf{Karta}
+\begin{itemize}
+	\item broj\_karte
+	\item Rezervacija\_idRezervacija
+	\item broj\_mesta
+	\item povratna
+	\item cena
+	\item vrsta\_popusta
+	\item cena
+	\item cena\_sa\_popustom
+\end{itemize}
+\textbf{Mesto}
+\begin{itemize}
+	\item broj\_mesta
+	\item cena
+	\item Rezervacija\_idRezervacija
+\end{itemize}
+\textbf{Popust} \\
+Sadr\v zi podatke o popustima koje daje odredjeni prevoznik.
+\begin{itemize}
+	\item id
+	\item iznos\_u\_procentima
+	\item Prevoznik\_id
+\end{itemize}
+\textbf{Povratna\_karta}\\
+Informacije o popustu na povratnu kartu.
+\begin{itemize}
+	\item Popust\_id
+	\item Popust\_Prevoznik\_id
+	\item vazi\_dana
+\end{itemize}
+\textbf{Ostali\_popusti} \\
+Pored popusta za povratnu kartu, prevoznici daju popust i za odredjene kategorije gradjana.
+\begin{itemize}
+	\item Popust\_id
+	\item Popust\_Prevoznik\_id
+	\item naziv\_popusta
+\end{itemize}
+\textbf{Cena}\\
+Informacije o cenama izmedju dve stanice za odredjenog prevoznika.
+\begin{itemize}
+	\item Autobuska\_stanica\_id
+	\item Autobuska\_stanica\_id1
+	\item Prevoznik\_id
+	\item cena\_karte
+	\item cena\_mesta
+\end{itemize}
