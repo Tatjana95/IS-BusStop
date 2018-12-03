@@ -316,6 +316,7 @@ Opisuje odredjenu autobusku stanicu.
 	\item id
 	\item naziv
 	\item grad
+	\item broj\_telefona
 \end{itemize}
 \textbf{Peron} \\
 Svaka stanica ima bar jedan peron.
@@ -334,6 +335,8 @@ Svaka stanica ima bar jedan peron.
 \begin{itemize}
 	\item id
 	\item naziv
+	\item e\_mail
+	\item broj\_telefona
 \end{itemize}
 \textbf{Vozac} \\
 Sadr\v zi informacije o voza\v cima.
@@ -341,6 +344,7 @@ Sadr\v zi informacije o voza\v cima.
 	\item maticni\_broj
 	\item ime
 	\item prezime
+	\item broj\_telefona
 	\item Prevoznik\_id
 \end{itemize}
 \textbf{Vozilo} \\
@@ -381,13 +385,13 @@ Informacije o rezervaciji karte ili mesta.
 	\item Polazi\_sa\_stanice\_Peron\_Autobuska\_stanica
 	\item Polazi\_sa\_stanice\_Polazak\_id
 	\item odrediste - id odredi\v sne stanice
+	\item broj\_mesta
 	\item preuzeta
 \end{itemize}
 \textbf{Karta}
 \begin{itemize}
 	\item broj\_karte
 	\item Rezervacija\_idRezervacija
-	\item broj\_mesta
 	\item povratna
 	\item cena
 	\item vrsta\_popusta
@@ -396,7 +400,6 @@ Informacije o rezervaciji karte ili mesta.
 \end{itemize}
 \textbf{Mesto}
 \begin{itemize}
-	\item broj\_mesta
 	\item cena
 	\item Rezervacija\_idRezervacija
 \end{itemize}
