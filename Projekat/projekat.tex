@@ -433,3 +433,57 @@ Informacije o cenama izmedju dve stanice za odredjenog prevoznika.
 	\item cena\_karte
 	\item cena\_mesta
 \end{itemize}
+\newpage
+\section{Arhitektura}
+\subsection{Uvod}
+Karakteristike arhitekture informacionog sistema za medjugradski autobuski saobra\' caj.
+
+\begin{description}
+	\item[$\ast$ Tip aplikacije:] Web aplikacija - i za klijente i za slu\v zbenike.
+	\item[$\ast$ Strategija isporu\v civanja:] Jedan serverski i vi\v se klijentskih ra\v cunara.
+	\item[$\ast$ Tehnologije:] HTML5, CSS, JS, PHP, MySql.
+	\item[$\ast$ Prate\' ce komponente:] \ \\
+		\begin{enumerate}
+			\item Logovanje na sistem:
+				\begin{enumerate}
+					\item[$\bullet$] Podsistem za logovanje slu\v zbenika
+						\begin{enumerate}
+							\item[$\cdot$] Komponenta za validaciju podataka
+							\item[$\cdot$] GUI komponenta za u\v citavanje podataka o korisni\v ckom imenu i lozinci
+						\end{enumerate}
+					\item[$\bullet$] Podsistem za logovanje kupca
+					\begin{enumerate}
+						\item[$\cdot$] Komponenta za validaciju podataka
+						\item[$\cdot$] GUI za u\v citavanje broja telefona i identifikacionog koda
+					\end{enumerate}
+					
+				\end{enumerate}
+			\item Backup baze - podsistem koji pravi kopiju baze
+				\begin{enumerate}
+					\item[$\bullet$] Schedule backup - na mese\v cnom ili nedeljnom nivou
+					\item[$\bullet$] On-demand backup
+				\end{enumerate}
+			\item Podr\v ska: dokumentacija, kontakt, podrska
+		\end{enumerate}
+	\item[$\ast$ Tip arhitekture:] Klijent - server arhitektura
+	\item[$\ast$ 4 sloja:] prezentacioni sloj, klijent kontroler, server kontroler, sloj podataka. 
+	\item[$\ast$] Klijent kontroler izvr\v sava validaciju podataka i autentifikaciju/autorizaciju, a server kontroler predstavlja serversku obradu podataka. Prezentacioni sloj pru\v za interfejs preko koga klijent mo\v ze i\v zvr\v siti rezervaciju karte/mesta ili reklamaciju istog, dok u slu\v caju slu\v zbenika pokre\' ce mehanizme za logovanje na sistem, a zatim pru\v za mogu\' cnost za unos podataka o kupovini karte/mesta i unos podataka o rezervacijama koje su obavljene telefonom.
+\end{description}
+
+
+
+\iffalse
+\subsection{Alokacija dodatnih resursa}
+\begin{description}
+	\item[$\ast$ Kratak opis: ] U slu\v caju da su sva mesta popunjena, sistem obave\v stava predstavnika prevozni\v cke agencije da je potrebno jo\v s resursa. 
+	\item[$\ast$ U\v cesnici: ] Predstavnik agencije.
+	\item[$\ast$ Preduslovi: ] Nema vi\v se mesta u trenutno rasporedjenim autobusima.
+	\item[$\ast$ Postuslovi: ] Povratna informacija da li prevoznik ima odgovaraju\'ce raspolo\v zive resurse.
+	\item[$\ast$ Tok: ] \ \\
+	\begin{enumerate}
+		\item Sistem obave\v stava predstavnika prevozni\v cke agencije da su potrebni dodatni resursi.
+		\item Predstavnik agencije mu \v salje odgovor da li mo\v ze da zameni teku\'ce vozilo vozilom ve\'ceg kapaciteta ili da uvede dodatno.
+		\item Ukoliko postoje odgovaraju\'ci resursi, bele\v ze se podaci o njima u sistem.
+	\end{enumerate}
+\end{description}
+\fi
