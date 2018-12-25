@@ -433,6 +433,17 @@ Informacije o cenama izmedju dve stanice za odredjenog prevoznika.
 	\item cena\_karte
 	\item cena\_mesta
 \end{itemize}
+\textbf{Zaposleni}
+Informacije o zaposlenima na odredjenoj stanici.
+\begin{itemize}
+	\item id
+	\item korisnicko\_ime
+	\item sifra
+	\item Ime
+	\item Prezime
+	\item broj\_telefona
+	\item Autobuska\_stanica\_id
+\end{itemize}
 \newpage
 \section{Arhitektura}
 \subsection{Uvod}
@@ -470,7 +481,12 @@ Karakteristike arhitekture informacionog sistema za medjugradski autobuski saobr
 	\item[$\ast$] Klijent kontroler izvr\v sava validaciju podataka i autentifikaciju/autorizaciju, a server kontroler predstavlja serversku obradu podataka. Prezentacioni sloj pru\v za interfejs preko koga klijent mo\v ze i\v zvr\v siti rezervaciju karte/mesta ili reklamaciju istog, dok u slu\v caju slu\v zbenika pokre\' ce mehanizme za logovanje na sistem, a zatim pru\v za mogu\' cnost za unos podataka o kupovini karte/mesta i unos podataka o rezervacijama koje su obavljene telefonom.
 \end{description}
 
-
+\begin{figure}[!htb] 
+	\centering
+	\includegraphics[width=1.2\linewidth]{"../Slike/arhitektura"}
+	\caption{Arhitektura sistema}
+	\label{fig:arhitektura}
+\end{figure}
 
 \iffalse
 \subsection{Alokacija dodatnih resursa}
